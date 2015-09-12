@@ -1,7 +1,6 @@
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.editor.actionSystem.EditorAction;
 import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
 import com.intellij.openapi.util.TextRange;
@@ -14,20 +13,17 @@ public class WordLeftAction extends EditorAction
 
     private static class Handler extends EditorActionHandler {
         public void execute(Editor editor, DataContext dataContext) {
-            System.out.println("WordLeftAction invoked!");
-            SelectionModel selectionModel = editor.getSelectionModel();
-            if (selectionModel != null) {
-                int newOffset = getOffsetOfMoveByWords(editor, -1);
-                selectionModel.setSelection(newOffset, newOffset);
-            } else {
-                // TODO: focus is not on a document, so invoke usual action
+            int newOffset = getOffsetOfMoveByWords(editor, -1);
+            editor.getCaretModel().moveToOffset(newOffset);
+            if (editor.getSelectionModel().hasSelection()) {
+                editor.getSelectionModel().removeSelection();
             }
         }
 
         private int getOffsetOfMoveByWords(Editor editor, int count)
         {
             Document doc = editor.getDocument();
-            int offset = editor.getSelectionModel().getSelectionStart();
+            int offset = editor.getCaretModel().getOffset();
             if (count > 0) // Move forward
             {
                 while (count-- > 0)
