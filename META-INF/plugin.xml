@@ -28,6 +28,13 @@
                     description="Sort selected lines or whole file if selection is empty">
                 <keyboard-shortcut keymap="$default" first-keystroke="alt shift l"/>
             </action>
+            <separator/>
+            <action id="voicesupport.wordleft"
+                    class="WordLeftAction"
+                    text="Move Caret to Previous Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift b"/>
+            </action>
             <add-to-group group-id="EditMenu" anchor="last"/>
         </group>
     </actions>

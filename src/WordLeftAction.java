@@ -1,139 +1,84 @@
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.actionSystem.EditorWriteActionHandler;
-import com.intellij.openapi.editor.actions.TextComponentEditorAction;
+import com.intellij.openapi.editor.SelectionModel;
+import com.intellij.openapi.editor.actionSystem.EditorAction;
+import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
+import com.intellij.openapi.util.TextRange;
 
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Dumb action to perform sort
- *
- * @author <a href="mailto:syllant@gmail.com">Sylvain FRANCOIS</a>
- * @version $Id$
- */
-public class WordLeftAction extends TextComponentEditorAction
+public class WordLeftAction extends EditorAction
 {
-  protected WordLeftAction()
-  {
-    super(new Handler());
-  }
-
-  private static class Handler extends EditorWriteActionHandler
-  {
-    public void executeWriteAction(Editor editor, DataContext dataContext)
-    {
-      final Document doc = editor.getDocument();
-
-      int startLine;
-      int endLine;
-
-      boolean hasSelection = editor.getSelectionModel().hasSelection();
-      if (hasSelection)
-      {
-        startLine = doc.getLineNumber(editor.getSelectionModel().getSelectionStart());
-        endLine = doc.getLineNumber(editor.getSelectionModel().getSelectionEnd());
-        if (doc.getLineStartOffset(endLine) == editor.getSelectionModel().getSelectionEnd())
-        {
-          endLine--;
-        }
-      }
-      else
-      {
-        startLine = 0;
-        endLine = doc.getLineCount() - 1;
-      }
-
-      // Ignore last lines (usually one) which are only '\n'
-      endLine = ignoreLastEmptyLines(doc, endLine);
-
-      if (startLine >= endLine)
-      {
-        return;
-      }
-      
-      // Extract text as a list of lines
-      List<String> lines = extractLines(doc, startLine, endLine);
-
-      // dumb sort
-      SortUtils.defaultSort(lines);
-
-      StringBuilder sortedText = joinLines(lines);
-
-      // Remove last \n is sort has been applied on whole file and the file did not end with \n
-      if (!hasSelection)
-      {
-        CharSequence charsSequence = doc.getCharsSequence();
-        if (charsSequence.charAt(charsSequence.length() - 1) != '\n')
-        {
-          sortedText.deleteCharAt(sortedText.length() - 1);
-        }
-      }
-
-      // Replace text
-      int startOffset = doc.getLineStartOffset(startLine);
-      int endOffset = doc.getLineEndOffset(endLine) + doc.getLineSeparatorLength(endLine);
-
-      editor.getDocument().replaceString(startOffset, endOffset, sortedText);
+    protected WordLeftAction() {
+        super(new Handler());
     }
 
-    private int ignoreLastEmptyLines(Document doc, int endLine)
-    {
-      while (endLine >= 0)
-      {
-        if (doc.getLineEndOffset(endLine) > doc.getLineStartOffset(endLine))
-        {
-          return endLine;
+    private static class Handler extends EditorActionHandler {
+        public void execute(Editor editor, DataContext dataContext) {
+            System.out.println("WordLeftAction invoked!");
+            SelectionModel selectionModel = editor.getSelectionModel();
+            if (selectionModel != null) {
+                int newOffset = getOffsetOfMoveByWords(editor, -1);
+                selectionModel.setSelection(newOffset, newOffset);
+            } else {
+                // TODO: focus is not on a document, so invoke usual action
+            }
         }
 
-        endLine--;
-      }
+        private int getOffsetOfMoveByWords(Editor editor, int count)
+        {
+            Document doc = editor.getDocument();
+            int offset = editor.getSelectionModel().getSelectionStart();
+            if (count > 0) // Move forward
+            {
+                while (count-- > 0)
+                {
+                    // Make sure we start at a word character
+                    if (!hasWordCharAfter(doc, offset))
+                        while (!hasWordCharAfter(doc, offset))
+                            offset++;
+                    // Move to first non-word character
+                    while (hasWordCharAfter(doc, offset))
+                        offset++;
+                }
+            }
+            else if (count < 0) // Move backward
+            {
+                while (count < 0)
+                {
+                    count++;
+                    // Make sure we start at a word character
+                    if (!hasWordCharBefore(doc, offset))
+                        while (!hasWordCharBefore(doc, offset))
+                            offset--;
+                    // Move to first non-word character
+                    while (hasWordCharBefore(doc, offset))
+                        offset--;
+                }
+            }
+            return offset;
+        }
 
-      return -1;
+        private boolean hasWordCharAfter(Document doc, int offset)
+        {
+            String text = doc.getText(new TextRange(offset, offset + 1));
+            if (text.length() == 0) {
+                return false;
+            } else {
+                char c = text.charAt(0);
+                return (Character.isLetter(c) || Character.isDigit(c));
+            }
+        }
+
+        private boolean hasWordCharBefore(Document doc, int offset)
+        {
+            if (offset == 0) {
+                return false;
+            } else {
+                String text = doc.getText(new TextRange(offset - 1, offset));
+                char c = text.charAt(0);
+                return (Character.isLetter(c) || Character.isDigit(c));
+            }
+        }
+
     }
-
-    private List<String> extractLines(Document doc, int startLine, int endLine)
-    {
-      List<String> lines = new ArrayList<String>(endLine - startLine);
-      for (int i = startLine; i <= endLine; i++)
-      {
-        String line = extractLine(doc, i);
-
-        lines.add(line);
-      }
-
-      return lines;
-    }
-
-    private String extractLine(Document doc, int lineNumber)
-    {
-      int lineSeparatorLength = doc.getLineSeparatorLength(lineNumber);
-      int startOffset = doc.getLineStartOffset(lineNumber);
-      int endOffset = doc.getLineEndOffset(lineNumber) + lineSeparatorLength;
-
-      String line = doc.getCharsSequence().subSequence(startOffset, endOffset).toString();
-
-      // If last line has no \n, add it one
-      // This causes adding a \n at the end of file when sort is applied on whole file and the file does not end
-      // with \n... This is fixed after.
-      if (lineSeparatorLength == 0)
-      {
-        line += "\n";
-      }
-
-      return line;
-    }
-
-    private StringBuilder joinLines(List<String> lines)
-    {
-      StringBuilder builder = new StringBuilder();
-      for (String line : lines)
-      {
-        builder.append(line);
-      }
-
-      return builder;
-    }
-  }
 }
