@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+
+<idea-plugin version="2">
+    <id>net.vocola.voiceCommandSupport</id>
+    <name>Voice Command Support</name>
+    <version>1.0</version>
+    <vendor email="vocola@vocola.net" url="http://vocola.net">Vocola</vendor>
+    <category>Editor</category>
+
+    <description><![CDATA[
+        Emacs-style word navigation. Select by line number mod 100.
+    ]]></description>
+
+    <change-notes><![CDATA[
+    ]]></change-notes>
+
+    <idea-version since-build="90.10000"/>
+
+    <depends>com.intellij.modules.lang</depends>
+
+    <actions>
+        <group id="linessorter.sort.group">
+            <separator/>
+            <action id="linessorter.sort"
+                    class="SortAction"
+                    text="Sort Lines"
+                    description="Sort selected lines or whole file if selection is empty">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt shift l"/>
+            </action>
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </group>
+    </actions>
+
+</idea-plugin>
