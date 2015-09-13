@@ -33,7 +33,25 @@
                     class="WordLeftAction"
                     text="Move Caret to Previous Word (Emacs-style)"
                     description="">
-                <keyboard-shortcut keymap="$default" first-keystroke="alt shift b"/>
+                <keyboard-shortcut keymap="$default" first-keystroke="alt COMMA"/>
+            </action>
+            <action id="voicesupport.wordright"
+                    class="WordRightAction"
+                    text="Move Caret to Next Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt PERIOD"/>
+            </action>
+            <action id="voicesupport.wordleftextend"
+                    class="WordLeftExtendAction"
+                    text="Extend Selection to Previous Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt COMMA"/>
+            </action>
+            <action id="voicesupport.wordrightextend"
+                    class="WordRightExtendAction"
+                    text="Extend Selection to Next Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt PERIOD"/>
             </action>
             <add-to-group group-id="EditMenu" anchor="last"/>
         </group>

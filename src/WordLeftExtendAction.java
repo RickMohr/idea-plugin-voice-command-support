@@ -3,16 +3,16 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.actionSystem.EditorAction;
 import com.intellij.openapi.editor.actionSystem.EditorActionHandler;
 
-public class WordLeftAction extends EditorAction
+public class WordLeftExtendAction extends EditorAction
 {
-    protected WordLeftAction() {
+    protected WordLeftExtendAction() {
         super(new Handler());
     }
 
     private static class Handler extends EditorActionHandler {
 
         public void execute(Editor editor, DataContext dataContext) {
-            EmacsStyleWordNavigation.moveByWords(editor, -1);
+            EmacsStyleWordNavigation.extendByWords(editor, -1);
         }
 
     }
