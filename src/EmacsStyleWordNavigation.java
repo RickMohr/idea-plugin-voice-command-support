@@ -32,7 +32,7 @@ public class EmacsStyleWordNavigation {
             while (count-- > 0) {
                 // Make sure we start at a word character
                 if (!hasWordCharAfter(doc, offset))
-                    while (!hasWordCharAfter(doc, offset))
+                    while (!isAtDocEnd(doc, offset) && !hasWordCharAfter(doc, offset))
                         offset++;
                 // Move to first non-word character
                 while (hasWordCharAfter(doc, offset))
@@ -43,7 +43,7 @@ public class EmacsStyleWordNavigation {
                 count++;
                 // Make sure we start at a word character
                 if (!hasWordCharBefore(doc, offset))
-                    while (!hasWordCharBefore(doc, offset))
+                    while (!isAtDocStart(offset) && !hasWordCharBefore(doc, offset))
                         offset--;
                 // Move to first non-word character
                 while (hasWordCharBefore(doc, offset))
@@ -54,22 +54,32 @@ public class EmacsStyleWordNavigation {
     }
 
     private static boolean hasWordCharAfter(Document doc, int offset) {
-        String text = doc.getText(new TextRange(offset, offset + 1));
-        if (text.length() == 0) {
+        if (isAtDocEnd(doc, offset)) {
             return false;
         } else {
-            char c = text.charAt(0);
-            return (Character.isLetter(c) || Character.isDigit(c));
+            return isLetterOrDigit(doc, offset, offset + 1);
         }
     }
 
     private static boolean hasWordCharBefore(Document doc, int offset) {
-        if (offset == 0) {
+        if (isAtDocStart(offset)) {
             return false;
         } else {
-            String text = doc.getText(new TextRange(offset - 1, offset));
-            char c = text.charAt(0);
-            return (Character.isLetter(c) || Character.isDigit(c));
+            return isLetterOrDigit(doc, offset - 1, offset);
         }
+    }
+
+    private static boolean isAtDocStart(int offset) {
+        return offset == 0;
+    }
+
+    private static boolean isAtDocEnd(Document doc, int offset) {
+        return offset == doc.getTextLength();
+    }
+
+    private static boolean isLetterOrDigit(Document doc, int startOffset, int endOffset) {
+        String text = doc.getText(new TextRange(startOffset, endOffset));
+        char c = text.charAt(0);
+        return (Character.isLetter(c) || Character.isDigit(c));
     }
 }
