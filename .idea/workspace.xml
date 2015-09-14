@@ -25,14 +25,59 @@
       <file leaf-file-name="EmacsStyleWordNavigation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/EmacsStyleWordNavigation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35416666">
-              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.3604651">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistCaret.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PersistCaret.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
-                <element signature="e#2812#2813#0" expanded="true" />
-                <element signature="e#2846#2847#0" expanded="true" />
-                <element signature="e#2913#2914#0" expanded="true" />
-                <element signature="e#2965#2966#0" expanded="true" />
+                <element signature="e#149#150#0" expanded="true" />
+                <element signature="e#209#210#0" expanded="true" />
+                <element signature="e#258#259#0" expanded="true" />
+                <element signature="e#318#319#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SaveCaretAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SaveCaretAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+              <folding>
+                <element signature="e#484#485#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RestoreCaretAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/RestoreCaretAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding>
+                <element signature="e#542#543#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="plugin.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -43,6 +88,8 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
               <folding>
+                <element signature="e#0#12314#0" expanded="false" />
+                <element signature="imports" expanded="false" />
                 <element signature="docComment;class#Document#0" expanded="false" />
                 <element signature="docComment;method#getText#0;class#Document#0" expanded="false" />
                 <element signature="e#2014#2022#0" expanded="false" />
@@ -85,6 +132,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -93,8 +147,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/src/PersistCaret.java" />
+        <option value="$PROJECT_DIR$/src/SaveCaretAction.java" />
+        <option value="$PROJECT_DIR$/src/RestoreCaretAction.java" />
+        <option value="$PROJECT_DIR$/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/EmacsStyleWordNavigation.java" />
       </list>
     </option>
@@ -138,6 +195,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,11 +228,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="VoiceCommandSupport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idea-plugin-voice-command-support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="META-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,6 +254,13 @@
     <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/dummy" />
     <property name="dynamic.classpath" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
   <component name="RunManager" selected="Plugin.VoiceCommandSupport">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -362,7 +440,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -405,6 +483,60 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/EmacsStyleWordNavigation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Programs/intellij-community/platform/core-api/src/com/intellij/openapi/editor/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#12314#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="docComment;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getText#0;class#Document#0" expanded="false" />
+            <element signature="e#2014#2022#0" expanded="false" />
+            <element signature="e#2069#2077#0" expanded="false" />
+            <element signature="docComment;method#getCharsSequence#0;class#Document#0" expanded="false" />
+            <element signature="e#2620#2640#0" expanded="false" />
+            <element signature="docComment;method#getImmutableCharSequence#0;class#Document#0" expanded="false" />
+            <element signature="e#2890#2898#0" expanded="false" />
+            <element signature="docComment;method#getChars#0;class#Document#0" expanded="false" />
+            <element signature="e#3060#3071#0" expanded="false" />
+            <element signature="docComment;method#getTextLength#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getLineCount#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getLineNumber#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getLineStartOffset#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getLineEndOffset#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#insertString#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#deleteString#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#replaceString#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#isWritable#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getModificationStamp#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#fireReadOnlyModificationAttempt#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#addDocumentListener#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#removeDocumentListener#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#createRangeMarker#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#createRangeMarker#1;class#Document#0" expanded="false" />
+            <element signature="docComment;method#addPropertyChangeListener#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#removePropertyChangeListener#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#setReadOnly#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#createGuardedBlock#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#removeGuardedBlock#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getOffsetGuard#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#getRangeGuard#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#startGuardedBlockChecking#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#stopGuardedBlockChecking#0;class#Document#0" expanded="false" />
+            <element signature="docComment;method#setCyclicBufferSize#0;class#Document#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -417,7 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -433,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -449,7 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -515,15 +644,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="105" column="27" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19758508">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -532,6 +652,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="94" column="19" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
           <folding>
+            <element signature="e#0#12314#0" expanded="false" />
+            <element signature="imports" expanded="false" />
             <element signature="docComment;class#Document#0" expanded="false" />
             <element signature="docComment;method#getText#0;class#Document#0" expanded="false" />
             <element signature="e#2014#2022#0" expanded="false" />
@@ -571,16 +693,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/PersistCaret.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#149#150#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SaveCaretAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+          <folding>
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestoreCaretAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#542#543#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/META-INF/plugin.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/EmacsStyleWordNavigation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35416666">
-          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
-          <folding>
-            <element signature="e#2812#2813#0" expanded="true" />
-            <element signature="e#2846#2847#0" expanded="true" />
-            <element signature="e#2913#2914#0" expanded="true" />
-            <element signature="e#2965#2966#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.3604651">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -2,52 +2,65 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 
 <idea-plugin version="2">
-  <id>net.vocola.voiceCommandSupport</id>
-  <name>Voice Command Support</name>
-  <version>1.0</version>
-  <vendor email="vocola@vocola.net" url="http://vocola.net">Vocola</vendor>
-  <category>Editor</category>
+    <id>net.vocola.voiceCommandSupport</id>
+    <name>Voice Command Support</name>
+    <version>1.0</version>
+    <vendor email="vocola@vocola.net" url="http://vocola.net">Vocola</vendor>
+    <category>Editor</category>
 
-  <description><![CDATA[
+    <description><![CDATA[
         Emacs-style word navigation. Select by line number mod 100.
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
     ]]></change-notes>
 
-  <idea-version since-build="90.10000"/>
+    <idea-version since-build="90.10000"/>
 
-  <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.lang</depends>
 
-  <actions>
-    <group id="linessorter.sort.group">
-      <separator/>
-      <action id="voicesupport.wordleft"
-              class="WordLeftAction"
-              text="Move Caret to Previous Word (Emacs-style)"
-              description="">
-        <keyboard-shortcut keymap="$default" first-keystroke="alt COMMA"/>
-      </action>
-      <action id="voicesupport.wordright"
-              class="WordRightAction"
-              text="Move Caret to Next Word (Emacs-style)"
-              description="">
-        <keyboard-shortcut keymap="$default" first-keystroke="alt PERIOD"/>
-      </action>
-      <action id="voicesupport.wordleftextend"
-              class="WordLeftExtendAction"
-              text="Extend Selection to Previous Word (Emacs-style)"
-              description="">
-        <keyboard-shortcut keymap="$default" first-keystroke="shift alt COMMA"/>
-      </action>
-      <action id="voicesupport.wordrightextend"
-              class="WordRightExtendAction"
-              text="Extend Selection to Next Word (Emacs-style)"
-              description="">
-        <keyboard-shortcut keymap="$default" first-keystroke="shift alt PERIOD"/>
-      </action>
-      <add-to-group group-id="EditMenu" anchor="last"/>
-    </group>
-  </actions>
+    <actions>
+        <group id="linessorter.sort.group">
+            <separator/>
+            <action id="voicesupport.wordleft"
+                    class="WordLeftAction"
+                    text="Move Caret to Previous Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt COMMA"/>
+            </action>
+            <action id="voicesupport.wordright"
+                    class="WordRightAction"
+                    text="Move Caret to Next Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt PERIOD"/>
+            </action>
+            <action id="voicesupport.wordleftextend"
+                    class="WordLeftExtendAction"
+                    text="Extend Selection to Previous Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt COMMA"/>
+            </action>
+            <action id="voicesupport.wordrightextend"
+                    class="WordRightExtendAction"
+                    text="Extend Selection to Next Word (Emacs-style)"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="shift alt PERIOD"/>
+            </action>
+            <separator/>
+            <action id="voicesupport.savecaret"
+                    class="SaveCaretAction"
+                    text="Save current caret position"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt s"/>
+            </action>
+            <action id="voicesupport.restorecaret"
+                    class="RestoreCaretAction"
+                    text="Restore caret from saved position"
+                    description="">
+                <keyboard-shortcut keymap="$default" first-keystroke="alt r"/>
+            </action>
+            <add-to-group group-id="EditMenu" anchor="last"/>
+        </group>
+    </actions>
 
 </idea-plugin>
