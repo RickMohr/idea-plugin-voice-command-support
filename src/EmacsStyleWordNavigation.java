@@ -1,28 +1,17 @@
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
-import com.intellij.openapi.editor.SelectionModel;
 import com.intellij.openapi.util.TextRange;
 
 public class EmacsStyleWordNavigation {
 
     public static void moveByWords(Editor editor, int count) {
         int newOffset = getOffsetOfMoveByWords(editor, count);
-        editor.getCaretModel().moveToOffset(newOffset);
-        editor.getSelectionModel().removeSelection();
+        EditorSelection.moveTo(editor, newOffset);
     }
 
     public static void extendByWords(Editor editor, int count) {
-        int offset = editor.getCaretModel().getOffset();
-        int root = offset;
-        SelectionModel selectionModel = editor.getSelectionModel();
-        if (selectionModel.hasSelection()) {
-            int start = selectionModel.getSelectionStart();
-            int end = selectionModel.getSelectionEnd();
-            root = (offset == start ? end : start);
-        }
         int newOffset = getOffsetOfMoveByWords(editor, count);
-        editor.getCaretModel().moveToOffset(newOffset);
-        editor.getSelectionModel().setSelection(Math.min(root, newOffset), Math.max(root, newOffset));
+        EditorSelection.extendTo(editor, newOffset);
     }
 
     private static int getOffsetOfMoveByWords(Editor editor, int count) {
