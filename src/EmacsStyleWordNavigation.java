@@ -47,7 +47,7 @@ public class EmacsStyleWordNavigation {
                         offset--;
                 // Move to first non-word character
                 while (hasWordCharBefore(doc, offset))
-                    offset--;
+                     offset--;
             }
         }
         return offset;
@@ -57,7 +57,7 @@ public class EmacsStyleWordNavigation {
         if (isAtDocEnd(doc, offset)) {
             return false;
         } else {
-            return isLetterOrDigit(doc, offset, offset + 1);
+            return isWordChar(doc, offset, offset + 1);
         }
     }
 
@@ -65,7 +65,7 @@ public class EmacsStyleWordNavigation {
         if (isAtDocStart(offset)) {
             return false;
         } else {
-            return isLetterOrDigit(doc, offset - 1, offset);
+            return isWordChar(doc, offset - 1, offset);
         }
     }
 
@@ -77,9 +77,9 @@ public class EmacsStyleWordNavigation {
         return offset == doc.getTextLength();
     }
 
-    private static boolean isLetterOrDigit(Document doc, int startOffset, int endOffset) {
+    private static boolean isWordChar(Document doc, int startOffset, int endOffset) {
         String text = doc.getText(new TextRange(startOffset, endOffset));
         char c = text.charAt(0);
-        return (Character.isLetter(c) || Character.isDigit(c));
+        return (Character.isLetter(c) || Character.isDigit(c) || c == '_');
     }
 }
